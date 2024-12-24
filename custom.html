@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">MySite</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Custom Website</h1>
+            <p>Building responsive and interactive websites with HTML, CSS, and JavaScript</p>
+            <details>
+            <button id="exploreBtn">Explore More
+                <img src="images/leancss/baba g.jfif">
+
+            </button>
+
+                <Summary>Details
+    
+                </Summary>
+            </details>
+            
+                
+            
+        
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am a web developer passionate about building user-friendly and aesthetically pleasing websites.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Description of Project 1 goes here.
+                <p>this is my first project.<img src="images/paa.png"></p>
+            </p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Description of Project 2 goes here.
+                <p>
+                    <img src="images/leancss/pa.jfif"> this is second project </p>
+            </p>
+        </div>
+        <div class="project-card">
+            <h3>Project 3</h3>
+            <p>Description of Project 3 goes here.
+                <img src="images/leancss/hhhh.jfif">
+                <p>this is my third project</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MySite. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js">
+        // Smooth scroll for navigation links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        window.scrollTo({
+            top: targetElement.offsetTop - 50,
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Button click event to scroll to the next section (Portfolio)
+document.getElementById('exploreBtn').addEventListener('click', function() {
+    window.scrollTo({
+        top: document.getElementById('about').offsetTop - 50,
+        behavior: 'smooth'
+    });
+});
+
+// Contact form submission handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert("Thank you for reaching out! We'll get back to you soon.");
+    this.reset(); // Reset form after submission
+});
+
+
+    </script>
+</body>
+</html>
